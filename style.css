@@ -1,14 +1,44 @@
 .green {
-  background-color: green
+  background-color: green;
 }
 
 .pink {
-  background-color: pink
+  background-color: rgb(231, 0, 100);
 }
-html {background-color: rgb(137, 200, 46);}
+
+html {
+  background-color: rgb(137, 200, 46);
+}
+
+#submit {
+  background-color: rgb(231, 0, 100);
+  border-radius: 4px;
+  width: 70px;
+}
 
 form {
   text-align: center;
   margin: auto;
-  padding: 70px 0;
+  font-family: Calibri, sans-serif;
+  /* padding: 70px 0; */
+}
+
+label {
+  text-align: left;
+  margin-bottom: 10px;
+  float: left;
+  padding-bottom: auto;
+}
+
+input {
+  width:200px;
+  margin-bottom: 10px;
+}
+
+.page-container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  /* border: 1px solid black; */
 }

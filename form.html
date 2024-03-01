@@ -7,19 +7,24 @@
     <title>Midlands HR</title>
 </head>
 <body>
-    <form action="">
-        <label for="name">Name: </label>
-        <input type="text" id="name" name="name" placeholder="Enter Your Name">
-        <br><br>
-        <label for="email">Email: </label>
-        <input type="email" id="email" name="email" placeholder="Enter Your Email">
-        <br><br>
-        <label for="card">Card: </label>
-        <input type="card" id="card" name="card" placeholder="Enter a Proxy Card Number">
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
-    <script src="jquery-3.7.1.js"></script>
-    <script src="validation.js"></script>
+    <div class="page-container">
+        <form action="">
+            <div>
+                <label for="name">Name:&nbsp;</label>
+                <input type="text" id="name" name="name" placeholder="Enter Your Name">
+            </div>
+            <div>
+                <label for="email">Email:&nbsp;</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email">
+            </div>
+            <div>
+                <label for="card">Card: &nbsp; </label>
+                <input type="card" id="card" name="card" placeholder="Enter a Proxy Card Number">
+            </div>
+            <input type="submit" value="Submit" id="submit", name="submit" class="pink">
+        </form>
+        <script src="jquery-3.7.1.js"></script>
+        <script src="validation.js"></script>
+    </div>
 </body>
 </html>
