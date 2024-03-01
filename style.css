@@ -5,3 +5,10 @@
 .pink {
   background-color: pink
 }
+html {background-color: rgb(137, 200, 46);}
+
+form {
+  text-align: center;
+  margin: auto;
+  padding: 70px 0;
+}
