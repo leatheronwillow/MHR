@@ -19,8 +19,13 @@ html {
 form {
   text-align: center;
   margin: auto;
-  font-family: Calibri, sans-serif;
+  font-family: calibri, sans-serif;
   /* padding: 70px 0; */
+}
+
+::placeholder {
+  color: rgb(60, 60, 59);
+
 }
 
 label {
