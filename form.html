@@ -11,15 +11,15 @@
         <form action="">
             <div>
                 <label for="name">Name:&nbsp;</label>
-                <input type="text" id="name" name="name" placeholder="Enter Your Name">
+                <input type="text" id="name" name="name" placeholder="Enter Your Name" pattern="[a-zA-Z0-9\s!@#$%&'*+-\/=?^_\{\|\}~]+">
             </div>
             <div>
                 <label for="email">Email:&nbsp;</label>
-                <input type="email" id="email" name="email" placeholder="Enter Your Email">
+                <input type="email" id="email" name="email" placeholder="Enter Your Email" pattern="[a-zA-Z0-9\s!@#$%&'*+-\/=?^_\{\|\}~]+">
             </div>
             <div>
                 <label for="card">Card: &nbsp; </label>
-                <input type="card" id="card" name="card" placeholder="Enter a Proxy Card Number">
+                <input type="text" id="card" name="card" placeholder="Enter a Proxy Card Number" pattern="[0-9]+">
             </div>
             <input type="submit" value="Submit" id="submit", name="submit" class="pink">
             <br><br>

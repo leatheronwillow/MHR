@@ -4,35 +4,26 @@ $(document).ready(function(){
   // when a value is typed in input field
   // check for validity
   $("#name").keyup(function(){
-    let name = document.getElementById("name");
-    validation.pattern.call(name);
-    validation.errorMessage();
+    validation.errorChecks();
   });
 
   $("#email").keyup(function(){
-    let name = document.getElementById("email");
-    validation.pattern.call(email);
-    validation.errorMessage();
+    validation.errorChecks();
   });
 
   $("#card").keyup(function(){
-    let card = document.getElementById("card");
-    validation.pattern.call(card);
-    validation.errorMessage();
+    validation.errorChecks();
   });
 
-
+  // define regex patterns for validity
   const criteria = {
     name: /^([A-Z][a-z]+\.\s)?([A-Z][a-z(\-A-Z)]+\s)+([A-Z][a-z(\-A-Z)]+)$/,
     email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
     card: /^(?:(4\d{12}(?:\d{3})?)|([25][1-5]\d{14})|(6(?:011|5\d{2})\d{12})|(3[47]\d{13})|(3(?:0[0-5]|[68]\d)\d{11})|((?:2131|1800|35\d{3})\d{11}))$/
   };
 
-  // $("#card").keyup(errorMessage);
-
+  // define methods for validation.
   const validation = {
-    // define regex patterns for validity
-
     pattern: function() {
         let id = this.id;
         let pattern;
@@ -67,7 +58,7 @@ $(document).ready(function(){
         }
       },
 
-    errorMessage: function(){
+    errorChecks: function(){
       const fields = {name: "name", email: "email", card: "card"};
 
       let errors = [];
@@ -75,9 +66,7 @@ $(document).ready(function(){
         let id = field;
         let element = document.getElementById(id)
         if ((!this.pattern.call(element) && element.value)){
-          // console.log("I'm in here");
           errors.push(id);
-          // console.log(errors);
         }
       }
       let errorString;
@@ -101,8 +90,38 @@ $(document).ready(function(){
       function capitalise(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
       }
+      },
+    luhnsAlgorithmCheck: function(){
+
+      //  get card number from the input field
+      let card = $('#card').val();
+
+      // define sumEven and sumOdd
+      let sumEven = 0;
+      let sumOdd = 0;
+
+      // loop through every other number starting from second to last
+      for (let i = card.length - 2; i > -1; i - 2){
+        let num = Number(card[i]) * 2;
+        if (num > 9){
+          num = num - 9;
+        }
+        sumEven += num;
       }
+
+      for (let i = card.length -1; i > -1; i - 2){
+        sumOdd += Number(card[i]);
       }
+
+      //  Luhn check
+      let sumOddEven = sumEven + sumOdd;
+      if (!(sumOddEven % 10)){
+        return true;
+      } else {
+        return false;
+      }
+    }
+    }
   }
 
 );
